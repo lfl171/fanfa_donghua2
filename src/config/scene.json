@@ -1,0 +1,325 @@
+[
+  {
+    "scene": "act1-peace-before",
+    "act": 1,
+    "title": { "zh": "和平破碎之前", "en": "Before the Peace Broke" },
+    "duration": 25,
+    "palette": "cold",
+    "camera": ["slow zoom"],
+    "animation": ["paper unfold", "photo reveal", "parallax"],
+    "music": "orchestra emotional",
+    "beatMarkers": [90, 300, 600],
+    "layers": [
+      {
+        "type": "particles",
+        "component": "ParticleDust",
+        "params": { "count": 60, "color": "#9aa7b8", "seed": 42 }
+      },
+      {
+        "type": "text",
+        "text": { "main": "1930", "sub": "世界仍相信和平" },
+        "delayFrames": 30,
+        "params": { "fadeOutAt": 200 }
+      },
+      {
+        "type": "image",
+        "src": "assets/act1_newspaper.png",
+        "component": "PaperTransition",
+        "delayFrames": 90,
+        "params": { "fadeOutAt": 300 }
+      },
+      {
+        "type": "image",
+        "src": "assets/act1_street.png",
+        "component": "PhotoReveal",
+        "delayFrames": 300,
+        "params": { "toScale": 1.15, "panX": -2, "grayscale": true }
+      },
+      {
+        "type": "component",
+        "component": "CharacterSilhouette",
+        "delayFrames": 380,
+        "params": {
+          "variant": "father-child",
+          "from": -10,
+          "to": 110,
+          "startFrame": 380,
+          "endFrame": 600
+        }
+      },
+      {
+        "type": "component",
+        "component": "BlankShot",
+        "delayFrames": 600,
+        "params": { "formula": "∫₀^∞ peace dt = ∞", "tint": "#04060c" }
+      }
+    ]
+  },
+  {
+    "scene": "act2-darkness-spreads",
+    "act": 2,
+    "title": { "zh": "黑暗扩散", "en": "The Darkness Spreads" },
+    "duration": 35,
+    "palette": "cold",
+    "camera": ["slow zoom", "right pan"],
+    "animation": ["ink spread"],
+    "music": "orchestra tense",
+    "beatMarkers": [400, 750, 900],
+    "layers": [
+      {
+        "type": "image",
+        "src": "assets/act2_globe.png",
+        "component": "PhotoReveal",
+        "delayFrames": 0,
+        "params": { "toScale": 3, "rotateTo": 20, "fadeOutAt": 380, "kenBurnsFrames": 380 }
+      },
+      {
+        "type": "text",
+        "text": { "main": "Warsaw · Berlin · Paris · London" },
+        "delayFrames": 220,
+        "params": { "fadeOutAt": 160, "fontSize": 32 }
+      },
+      {
+        "type": "map",
+        "src": "assets/act2_europe_map.png",
+        "component": "WorldMap",
+        "delayFrames": 330,
+        "params": {
+          "mode": "ink",
+          "inkPoints": "55,38,20,140; 48,42,55,170; 62,35,90,200; 40,45,125,230; 70,48,160,260; 35,38,195,290; 58,52,230,320; 45,30,265,350",
+          "inkColor": "#060a14",
+          "fadeInFrames": 40,
+          "fadeOutAt": 410
+        }
+      },
+      {
+        "type": "text",
+        "text": { "main": "黑暗扩散", "sub": "从欧洲到亚洲，从大西洋到太平洋" },
+        "delayFrames": 420,
+        "params": { "titleColor": "#8b0000", "fadeOutAt": 280 }
+      },
+      {
+        "type": "component",
+        "component": "AnimatedChart",
+        "delayFrames": 700,
+        "params": {
+          "mode": "line",
+          "data": "1939,3; 1940,8; 1941,15; 1942,24; 1943,34; 1944,50; 1945,70",
+          "title": "战争的代价",
+          "subtitle": "全球累计死亡人数 · Σ t ∈ [1939, 1945]",
+          "yUnit": "百万",
+          "counterTo": 70000000,
+          "counterLabel": "生命消逝（人）",
+          "drawFrames": 150,
+          "fadeOutAt": 290
+        }
+      },
+      {
+        "type": "component",
+        "component": "BlankShot",
+        "delayFrames": 980,
+        "params": { "tint": "#030509" }
+      }
+    ]
+  },
+  {
+    "scene": "act3-united-resistance",
+    "act": 3,
+    "title": { "zh": "世界联合抵抗", "en": "The World United" },
+    "duration": 60,
+    "palette": "transition",
+    "camera": ["static"],
+    "animation": ["network", "panel grid"],
+    "music": "orchestra hopeful",
+    "beatMarkers": [200, 400, 600, 1250, 1600],
+    "layers": [
+      {
+        "type": "map",
+        "src": "assets/act3_worldmap.png",
+        "component": "WorldMap",
+        "delayFrames": 0,
+        "params": {
+          "mode": "network",
+          "nodes": "78,40,30,亚洲; 52,32,230,欧洲; 20,42,430,美洲",
+          "links": "0-1,250; 1-2,450; 0-2,650",
+          "fadeOutAt": 620
+        }
+      },
+      {
+        "type": "text",
+        "text": { "main": "世界各地的人们，点亮了同一种光" },
+        "delayFrames": 700,
+        "params": { "fadeOutAt": 700, "fontSize": 34, "bottom": true }
+      },
+      {
+        "type": "component",
+        "component": "CharacterPanel",
+        "delayFrames": 600,
+        "params": { "src": "assets/act3_soldier.png", "title": "士兵", "index": 0, "gatherAt": 1250, "fadeOutAt": 1420, "faceless": true }
+      },
+      {
+        "type": "component",
+        "component": "CharacterPanel",
+        "delayFrames": 750,
+        "params": { "src": "assets/act3_nurse.png", "title": "护士", "index": 1, "gatherAt": 1250, "fadeOutAt": 1420 }
+      },
+      {
+        "type": "component",
+        "component": "CharacterPanel",
+        "delayFrames": 900,
+        "params": { "src": "assets/act3_worker.png", "title": "工人", "index": 2, "gatherAt": 1250, "fadeOutAt": 1420 }
+      },
+      {
+        "type": "component",
+        "component": "CharacterPanel",
+        "delayFrames": 1050,
+        "params": { "src": "assets/act3_child.png", "title": "孩子", "index": 3, "gatherAt": 1250, "fadeOutAt": 1420 }
+      },
+      {
+        "type": "component",
+        "component": "AnimatedChart",
+        "delayFrames": 1450,
+        "params": {
+          "mode": "bars",
+          "data": "中国,14; 英国,6; 苏联,4; 美国,4",
+          "title": "谁先举起抵抗的旗帜",
+          "subtitle": "主要国家反法西斯抵抗时长 · 1931–1945",
+          "yUnit": "年",
+          "highlightIndex": 0,
+          "drawFrames": 90,
+          "fadeOutAt": 330
+        }
+      },
+      {
+        "type": "component",
+        "component": "MathFormula",
+        "delayFrames": 350,
+        "params": { "formula": "∀ soul : light ≠ 0", "top": "12%", "fadeOutAt": 250 }
+      },
+      {
+        "type": "text",
+        "text": { "main": "世界联合抵抗", "sub": "The World United Against Fascism" },
+        "delayFrames": 1700,
+        "params": { "titleColor": "#d4af37" }
+      }
+    ]
+  },
+  {
+    "scene": "act4-dawn-appears",
+    "act": 4,
+    "title": { "zh": "黎明出现", "en": "The Dawn Appears" },
+    "duration": 30,
+    "palette": "warm",
+    "camera": ["slow zoom"],
+    "animation": ["color restore", "light transition"],
+    "music": "orchestra hopeful",
+    "beatMarkers": [150, 450, 750],
+    "layers": [
+      {
+        "type": "component",
+        "component": "ColorRestore",
+        "delayFrames": 0,
+        "params": {
+          "src": "assets/act4_photo.png",
+          "sweepStart": 150,
+          "sweepEnd": 750,
+          "sweep": true
+        }
+      },
+      {
+        "type": "particles",
+        "component": "ParticleDust",
+        "params": { "count": 40, "color": "#c8b28a", "seed": 7, "drift": "up" }
+      },
+      {
+        "type": "text",
+        "text": { "main": "黎明出现", "sub": "The Dawn Breaks Through" },
+        "delayFrames": 780,
+        "params": { "titleColor": "#b8860b" }
+      },
+      {
+        "type": "component",
+        "component": "MathFormula",
+        "delayFrames": 760,
+        "params": { "formula": "e^iπ + 1 = 0", "top": "24%", "color": "#d8c9a0", "fadeOutAt": 130 }
+      }
+    ]
+  },
+  {
+    "scene": "act5-new-world",
+    "act": 5,
+    "title": { "zh": "和平的新世界", "en": "A New World of Peace" },
+    "duration": 30,
+    "palette": "warm",
+    "camera": ["tilt up"],
+    "animation": ["grow"],
+    "music": "orchestra hopeful",
+    "beatMarkers": [150, 300, 620, 700, 780],
+    "layers": [
+      {
+        "type": "image",
+        "src": "assets/act5_ruins.png",
+        "component": "PhotoReveal",
+        "delayFrames": 0,
+        "params": { "toScale": 1.1, "fadeOutAt": 300, "fadeOutFrames": 60 }
+      },
+      {
+        "type": "component",
+        "component": "GrowGrass",
+        "delayFrames": 40,
+        "params": { "count": 20, "fadeOutAt": 320 }
+      },
+      {
+        "type": "image",
+        "src": "assets/act5_city_dawn.png",
+        "component": "PhotoReveal",
+        "delayFrames": 240,
+        "params": { "fromScale": 1.08, "toScale": 1.15, "fadeInFrames": 60, "fadeOutAt": 620 }
+      },
+      {
+        "type": "component",
+        "component": "CharacterSilhouette",
+        "delayFrames": 300,
+        "params": {
+          "variant": "child-run",
+          "from": 60,
+          "to": 85,
+          "startFrame": 300,
+          "endFrame": 600,
+          "color": "#2a2018"
+        }
+      },
+      {
+        "type": "image",
+        "src": "assets/act5_final_map.png",
+        "component": "PhotoReveal",
+        "delayFrames": 600,
+        "params": { "fromScale": 1.05, "toScale": 1, "fadeInFrames": 50, "background": "#fdfaf2" }
+      },
+      {
+        "type": "text",
+        "text": { "main": "战争留下伤痛" },
+        "delayFrames": 620,
+        "params": { "fontSize": 40, "titleColor": "#4a4036", "position": "30%" }
+      },
+      {
+        "type": "text",
+        "text": { "main": "历史留下警示" },
+        "delayFrames": 690,
+        "params": { "fontSize": 40, "titleColor": "#4a4036", "position": "42%" }
+      },
+      {
+        "type": "text",
+        "text": { "main": "和平需要每一代人守护" },
+        "delayFrames": 760,
+        "params": { "fontSize": 44, "titleColor": "#8b6914", "position": "54%" }
+      },
+      {
+        "type": "component",
+        "component": "MathFormula",
+        "delayFrames": 800,
+        "params": { "formula": "d(hope)/dt > 0", "top": "82%", "size": 34, "color": "#8aa06a" }
+      }
+    ]
+  }
+]
